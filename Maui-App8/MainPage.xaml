@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="Maui_App8.MainPage"
+Title="Listado de Usuarios">
+    <ScrollView>
+        <StackLayout Padding="5">
+            <Frame BackgroundColor="#6456b7" Padding="24" CornerRadius="4">
+                <Label Text="Listado de usuarios" HorizontalTextAlignment="Center"
+TextColor="Black" FontSize="36"/>
+            </Frame>
+            <Button Text="Cargar Usuarios" CornerRadius="5"
+TextColor="Black" HeightRequest="60" Clicked="Button_Clicked"/>
+            <ListView x:Name="milista"
+ItemTapped="milista_ItemTapped"
+SeparatorColor="Coral"
+Margin="15,1"
+>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="2"
+BackgroundColor="Beige">
+                                <StackLayout WidthRequest="5"
+BackgroundColor="Chocolate"></StackLayout>
+                                <Label Text="{Binding id}"/>
+                                <Image WidthRequest="100"
+Source="https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-ic
+on-png.png"/>
+                                <StackLayout Padding="15,0">
+                                    <Label Text="Nombre" TextColor="Black" FontAttributes="Bold"/>
+                                    <Label Text="{Binding nombre}" TextColor="Black"/>
+                                    <Label Text="Usuario" TextColor="Black" FontAttributes="Bold"/>
+                                    <Label Text="{Binding usuario}" TextColor="Black"/>
+                                    <Label Text="Contraseña" TextColor="Black" FontAttributes="Bold"/>
+                                    <Label Text="{Binding contrasena}" TextColor="Black" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
